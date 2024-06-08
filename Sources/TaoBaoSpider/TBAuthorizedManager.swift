@@ -1,5 +1,5 @@
 //
-//  TaoBaoAuthorizedManager.swift
+//  TBAuthorizedManager.swift
 //  NiuNiuRent
 //
 //  Created by Q Z on 2023/6/16.
@@ -43,7 +43,7 @@ public enum TBAuthorizedType {
 }
 internal let TaoBao_TenantID = "TaoBao_TenantID"
 internal let TaoBao_UserID = "TaoBao_UserID"
-open class TaoBaoAuthorizedManager: UIView {
+open class TBAuthorizedManager: UIView {
     private var callback: ((Bool)->Void)?
     private var trackBlock: (([String: String])->Void)?
     private var loginType: TBAuthorizedType = .qrcode
@@ -258,7 +258,7 @@ open class TaoBaoAuthorizedManager: UIView {
     // MARK: Get
 }
 
-extension TaoBaoAuthorizedManager: WKScriptMessageHandler{
+extension TBAuthorizedManager: WKScriptMessageHandler{
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "ajaxDone",
            let dic = message.body as? [String: Any],
@@ -305,7 +305,7 @@ extension TaoBaoAuthorizedManager: WKScriptMessageHandler{
     }
 }
 
-extension TaoBaoAuthorizedManager: WKNavigationDelegate{
+extension TBAuthorizedManager: WKNavigationDelegate{
   
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let absoluteString = webView.url?.absoluteString

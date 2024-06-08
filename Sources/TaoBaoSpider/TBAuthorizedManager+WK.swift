@@ -1,5 +1,5 @@
 //
-//  TaoBaoAuthorized+WK.swift
+//  TBAuthorizedManager+WK.swift
 //  NiuNiuRent
 //
 //  Created by Q Z on 2023/7/12.
@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-extension TaoBaoAuthorizedManager {
+extension TBAuthorizedManager {
     /**我的支付宝信息
      * 余额宝1
      * 余额2
@@ -72,7 +72,7 @@ extension TaoBaoAuthorizedManager {
     }
 }
 
-extension TaoBaoAuthorizedManager {
+extension TBAuthorizedManager {
     func getTBHtml() {
         let addressJS = "var url = window.location.href;" +
         "var body = document.getElementsByTagName('html')[0].outerHTML;" +
